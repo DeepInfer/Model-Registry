@@ -1,49 +1,44 @@
 {
-  "name" : "Prostate Gland Segmenter",
+  "name": "Prostate Gland Segmenter",
   "docker_image_name": "deepinfer/prostate-segmenter-cpu",
-  "template_code_filename" : "ImageFilter",
-  "template_test_filename" : "ImageFilter",
-  "number_of_inputs" : 1,
-  "doc" : "Compute the voxel-wise absolute value of an image",
-  "pixel_types" : "BasicPixelIDTypeList",
-  "vector_pixel_types_by_component" : "VectorPixelIDTypeList",
-  "members" : [
+  "number_of_inputs": 1,
+  "task": "Segmentation.",
+  "organ": "Prostate",
+  "modality": "MRI",
+  "train_test_data_details": "The model is trained on pelvic MRI scans of a 3T machine without use of an Endorectal Coil.",
+  "briefdescription": "Whole-gland prostate segmentation in pelvic MRI scans.",
+  "detaileddescription": "",
+  "version": "0.1",
+  "training": [
     {
-      "name" : "InputVolume",
-      "type" : "volume",
-      "iotype" : "input",
-      "default" : "std::vector<unsigned int>(3, 64)",
-      "itk_type" : "typename FilterType::SizeType"
-    },
-   {
-      "name" : "OutputLabel",
-      "type" : "volume",
-     "iotype" : "output",
-      "default" : "std::vector<unsigned int>(3, 64)",
-      "itk_type" : "typename FilterType::SizeType"
-    }
-
-],
-  "tests" : [
-    {
-      "tag" : "float",
-      "description" : "Abs of a float image",
-      "tolerance" : 0.01,
-      "settings" : [],
-      "inputs" : [
-        "Input/RA-Slice-Float.nrrd"
-      ]
-    },
-    {
-      "tag" : "short",
-      "description" : "Abs of a short image",
-      "tolerance" : 0.01,
-      "settings" : [],
-      "inputs" : [
-        "Input/RA-Slice-Short.nrrd"
-      ]
+      "number of subjects": 224
     }
   ],
-  "briefdescription" : "Computes the absolute value of each pixel.",
-  "detaileddescription" : "vnl_math_abs() is used to perform the computation.\n\n\\par Wiki Examples:\n\n\\li All Examples \n\n\\li Compute the absolute value of an image"
+  "test": [
+    {
+      "number of subjects": 50,
+      "Accuracy": 0.76,
+      "Metric": "Dice Similarity"
+    }
+  ],
+  "pixel_types": "BasicPixelIDTypeList",
+  "vector_pixel_types_by_component": "VectorPixelIDTypeList",
+  "members": [
+    {
+      "name": "InputVolume",
+      "type": "volume",
+      "iotype": "input",
+      "voltype": "ScalarVolume",
+      "default": "std::vector<unsigned int>(3, 64)",
+      "itk_type": "typename FilterType::SizeType"
+    },
+    {
+      "name": "OutputLabel",
+      "type": "volume",
+      "iotype": "output",
+      "voltype": "LabelMap",
+      "default": "std::vector<unsigned int>(3, 64)",
+      "itk_type": "typename FilterType::SizeType"
+    }
+  ]
 }
