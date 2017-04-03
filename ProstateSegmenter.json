@@ -1,6 +1,5 @@
 {
   "name": "Prostate Gland Segmenter",
-  "docker_image_name": "deepinfer/prostate-segmenter-cpu",
   "number_of_inputs": 1,
   "task": "Segmentation.",
   "organ": "Prostate",
@@ -9,6 +8,13 @@
   "briefdescription": "Whole-gland prostate segmentation in pelvic MRI scans.",
   "detaileddescription": "",
   "version": "0.1",
+  "docker":[
+    {
+    "dockerhub_repository": "deepinfer/prostate-segmenter-cpu",
+    "digits": "43f13084e4d75508a0bc08b4a8c55880b4a5defb90043cb82d6a39ac25adabbf",
+    "size": "4.6 GB"
+    }
+  ],
   "training": [
     {
       "number of subjects": 224
