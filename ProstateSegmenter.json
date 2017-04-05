@@ -11,7 +11,7 @@
   "docker":
     {
     "dockerhub_repository": "deepinfer/prostate-segmenter-cpu",
-    "digits": "43f13084e4d75508a0bc08b4a8c55880b4a5defb90043cb82d6a39ac25adabbf",
+    "digits": "sha256:43f13084e4d75508a0bc08b4a8c55880b4a5defb90043cb82d6a39ac25adabbf",
     "size": "4.6 GB"
     }
   ,
