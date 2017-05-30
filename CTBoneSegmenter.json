@@ -7,11 +7,11 @@
   "train_test_data_details": "The model is trained on CT data reconstructed with a variety of kernels with and without contrast agent added.",
   "briefdescription": "Bone segmentation from chest CT scans using a modified UNET algorithm",
   "detaileddescription": "",
-  "version": "0.1",
+  "version": "1.0",
   "docker":
     {
-    "dockerhub_repository": "4quant/bone-segmenter-cpu",
-    "digest": "sha256:f1c96761b6a068db89411abbb720b44e5df035c59370ceda0e7c15b3cb3307ac",
+    "dockerhub_repository": "4quant/bone-segmenter-cpu:v1",
+    "digest": "sha256:ccf3ebcca020f10873c76fcdacc73be766180184540d9f164628be1a9e29cdb0",
     "size": "3.6 GB"
     }
   ,
