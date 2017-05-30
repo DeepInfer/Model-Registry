@@ -4,9 +4,9 @@
   "task": "Segmentation.",
   "organ": "Chest",
   "modality": "CT",
-  "train_test_data_details": "The model is trained on CT data reconstructed with a variety of kernels with and without contrast agent added.",
-  "briefdescription": "Bone segmentation from chest CT scans using a modified UNET algorithm",
-  "detaileddescription": "",
+  "train_test_data_details": "The model is trained on CT data reconstructed with a variety of reconstruction kernels with and without contrast agent added.",
+  "briefdescription": "A bone segmentation plugin for chest CT scans developed and trained by 4Quant using a modified UNET algorithm",
+  "detaileddescription": "For more details visit http://4quant.com/Bone-Segmenter",
   "version": "1.0",
   "docker":
     {
