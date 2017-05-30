@@ -11,7 +11,7 @@
   "docker":
     {
     "dockerhub_repository": "4quant/bone-segmenter-cpu",
-    "digest": "sha256:41020bcd68cc5854aa1757b452defc52e9035d39ed19edc1b33439d327dd99b5",
+    "digest": "sha256:f1c96761b6a068db89411abbb720b44e5df035c59370ceda0e7c15b3cb3307ac",
     "size": "3.6 GB"
     }
   ,
