@@ -1,0 +1,20 @@
+* Welcome screen:
+* Model properties:
+** name
+** version
+** task
+** organ
+** modality
+** training data details
+** description
+** detailed description
+** train:
+*** number of subjects
+** test:
+*** number of subjects
+*** accuracy
+*** metric
+* Docker properties
+** docker hub image
+** digest
+** size of the image
