@@ -1,0 +1,14 @@
+* Test ditaa
+
+#+BEGIN_SRC ditaa :file tst.png 
++---------------+
+|               |
+|  Hello        |
+|               |
+|               |
++---------------+
+#+END_SRC
+
+#+RESULTS:
+[[file:tst.png]]
+
