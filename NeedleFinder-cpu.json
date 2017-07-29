@@ -2,7 +2,7 @@
   "name": "NeedleFinder-cpu-devel",
   "number_of_inputs": 1,
   "task": "Segmentation.",
-  "organ": "catheters",
+  "organ": "Catheters",
   "modality": "MRI",
   "train_test_data_details": "The model is trained on 37 GYN MRI with catheters",
   "briefdescription": "Segmentation of catheters from GYN MRI.",
