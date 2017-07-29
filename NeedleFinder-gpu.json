@@ -11,7 +11,7 @@
   "docker":
     {
     "dockerhub_repository": "needlefinder/needlefinder:gpu-devel",
-    "digest": "sha256:111",
+    "digest": "sha256:b17201bdb8a146a72a497e2fbe9b5a54a677dfcc6a76281e4304a595224e84e9",
     "size": "2 GB"
     }
   ,

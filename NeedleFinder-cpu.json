@@ -11,7 +11,7 @@
   "docker":
     {
     "dockerhub_repository": "needlefinder/needlefinder:cpu-devel",
-    "digest": "sha256:111",
+    "digest": "sha256:3ea646b0c16f25ad7dfb586372153c14a6f25e362b04dd9fca73ee85cd98e21b",
     "size": "1 GB"
     }
   ,
