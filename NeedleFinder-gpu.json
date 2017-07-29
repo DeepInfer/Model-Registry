@@ -2,7 +2,7 @@
   "name": "NeedleFinder-gpu-devel",
   "number_of_inputs": 1,
   "task": "Segmentation.",
-  "organ": "Prostate",
+  "organ": "Catheters",
   "modality": "MRI",
   "train_test_data_details": "The model is trained on 37 GYN MRI with catheters",
   "briefdescription": "Use with nvidia-docker. Segmentation of catheters from GYN MRI.",
