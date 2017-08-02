@@ -1,0 +1,65 @@
+{
+  "name": "NeedleFinder-cpu-devel",
+  "number_of_inputs": 1,
+  "task": "Segmentation.",
+  "organ": "Catheters",
+  "modality": "MRI",
+  "train_test_data_details": "The model is trained on 37 GYN MRI with catheters",
+  "briefdescription": "Segmentation of catheters from GYN MRI.",
+  "detaileddescription": "",
+  "version": "0.1",
+  "docker":
+    {
+    "dockerhub_repository": "needlefinder/needlefinder:cpu-devel",
+    "digest": "sha256:ae752b5bc0e3e94a6da04ce91b7043bf1e9af72cbcc565e355a414e06fbf1dbd",
+    "size": "1 GB"
+    }
+  ,
+  "training":
+    {
+      "number of subjects": 37
+    }
+  ,
+  "test":
+    {
+      "number of subjects": 37,
+      "Accuracy": 0.7,
+      "Metric": "Dice Similarity"
+    }
+  ,
+  "pixel_types": "BasicPixelIDTypeList",
+  "vector_pixel_types_by_component": "VectorPixelIDTypeList",
+  "members": [
+    {
+      "name": "InputVolume",
+      "type": "volume",
+      "iotype": "input",
+      "voltype": "ScalarVolume",
+      "default": "std::vector<unsigned int>(3, 64)",
+      "itk_type": "typename FilterType::SizeType"
+    },
+    {
+      "name": "OutputLabel",
+      "type": "volume",
+      "iotype": "output",
+      "voltype": "LabelMap",
+      "default": "std::vector<unsigned int>(3, 64)",
+      "itk_type": "typename FilterType::SizeType"
+    },
+    {
+      "name": "Min. Object Size",
+      "type": "uint16_t",
+      "iotype": "parameter",
+      "param_name": "size",
+      "default": 100
+    },
+    {
+      "name": "Max line fit error",
+      "type": "float",
+      "iotype": "parameter",
+      "param_name": "error",
+      "default": 2.0
+    }
+
+]
+}
