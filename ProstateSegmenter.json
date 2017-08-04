@@ -45,6 +45,13 @@
       "voltype": "LabelMap",
       "default": "std::vector<unsigned int>(3, 64)",
       "itk_type": "typename FilterType::SizeType"
+    },
+    {
+      "name": "Accuracy",
+      "type": "bool",
+      "default" : "true",
+      "iotype": "input"
     }
+
 ]
 }
