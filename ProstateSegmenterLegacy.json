@@ -1,0 +1,57 @@
+{
+  "name": "Prostate Gland Segmenter Legacy",
+  "number_of_inputs": 1,
+  "task": "Segmentation.",
+  "organ": "Prostate",
+  "modality": "MRI",
+  "train_test_data_details": "The model is trained on pelvic MRI scans of a 3T machine without use of an Endorectal Coil.",
+  "briefdescription": "Whole-gland prostate segmentation in pelvic MRI scans.",
+  "detaileddescription": "",
+  "version": "0.1",
+  "docker":
+    {
+    "dockerhub_repository": "deepinfer/prostate-segmenter-cpu",
+    "digest": "sha256:43f13084e4d75508a0bc08b4a8c55880b4a5defb90043cb82d6a39ac25adabbf",
+    "size": "4.6 GB"
+    }
+  ,
+  "training":
+    {
+      "number of subjects": 224
+    }
+  ,
+  "test":
+    {
+      "number of subjects": 50,
+      "Accuracy": 0.76,
+      "Metric": "Dice Similarity"
+    }
+  ,
+  "pixel_types": "BasicPixelIDTypeList",
+  "vector_pixel_types_by_component": "VectorPixelIDTypeList",
+  "members": [
+    {
+      "name": "InputVolume",
+      "type": "volume",
+      "iotype": "input",
+      "voltype": "ScalarVolume",
+      "default": "std::vector<unsigned int>(3, 64)",
+      "itk_type": "typename FilterType::SizeType"
+    },
+    {
+      "name": "OutputLabel",
+      "type": "volume",
+      "iotype": "output",
+      "voltype": "LabelMap",
+      "default": "std::vector<unsigned int>(3, 64)",
+      "itk_type": "typename FilterType::SizeType"
+    },
+    {
+      "name": "Accuracy",
+      "type": "bool",
+      "default" : "true",
+      "iotype": "input"
+    }
+
+]
+}

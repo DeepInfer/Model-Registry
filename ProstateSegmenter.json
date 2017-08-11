@@ -5,36 +5,35 @@
   "organ": "Prostate",
   "modality": "MRI",
   "train_test_data_details": "The model is trained on pelvic MRI scans of a 3T machine without use of an Endorectal Coil.",
-  "briefdescription": "Whole-gland prostate segmentation in pelvic MRI scans.",
+  "briefdescription": "Whole-gland prostate segmentation in pelvic Axial T2-W MRI scans.",
   "detaileddescription": "",
+  "website": "",
+  "citation":"",
   "version": "0.1",
   "docker":
     {
-    "dockerhub_repository": "deepinfer/prostate-segmenter-cpu",
-    "digest": "sha256:43f13084e4d75508a0bc08b4a8c55880b4a5defb90043cb82d6a39ac25adabbf",
-    "size": "4.6 GB"
+    "dockerhub_repository": "deepinfer/deepinfer",
+    "digest": "sha256:e77419e4dc35f692ae3f2542429d0bc873b20f84718a49c4209654b1ef40a73e",
+    "size": "5.15 GB"
     }
   ,
-  "training":
-    {
-      "number of subjects": 224
-    }
-  ,
-  "test":
-    {
-      "number of subjects": 50,
-      "Accuracy": 0.76,
-      "Metric": "Dice Similarity"
-    }
-  ,
-  "pixel_types": "BasicPixelIDTypeList",
-  "vector_pixel_types_by_component": "VectorPixelIDTypeList",
+  "model_name": "prostate-segmenter",
+  "data_path": "/data",
   "members": [
+    {
+      "name" : "ModelType",
+      "type" :"enum",
+      "enum" : [ "Automatic", "BWH_WITH_ERC", "BWH_WITHOUT_ERC" ],
+            "detaileddescriptionSet" : "Select the model that will be used for inference.\n",
+      "iotype": "parameter"
+    },
+
     {
       "name": "InputVolume",
       "type": "volume",
       "iotype": "input",
       "voltype": "ScalarVolume",
+      "detaileddescriptionSet" : "Axial T2-W Prostate MRI.\n",
       "default": "std::vector<unsigned int>(3, 64)",
       "itk_type": "typename FilterType::SizeType"
     },
@@ -43,15 +42,23 @@
       "type": "volume",
       "iotype": "output",
       "voltype": "LabelMap",
+      "detaileddescriptionSet" : "Output labelmap for the segmentation results.\n",
       "default": "std::vector<unsigned int>(3, 64)",
       "itk_type": "typename FilterType::SizeType"
     },
+     {
+      "name" : "ProcessingType",
+      "type" :"enum",
+      "enum" : [ "Accurate", "Fast"],
+      "detaileddescriptionSet" : "Accurate model uses more models to compute the segmentation while the fast model only uses one model.\n",
+      "iotype": "parameter"
+
+    },
     {
-      "name": "Accuracy",
+      "name": "verbose",
       "type": "bool",
       "default" : "true",
-      "iotype": "input"
+      "iotype": "parameter"
     }
-
 ]
 }
