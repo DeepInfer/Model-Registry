@@ -13,7 +13,7 @@
   "docker":
     {
     "dockerhub_repository": "deepinfer/deepinfer",
-    "digest": "sha256:e77419e4dc35f692ae3f2542429d0bc873b20f84718a49c4209654b1ef40a73e",
+    "digest": "sha256:adc55e1e3da02a3a4d5fea114874be2a3ff480f79f1a35a99df6c854243cc6f1",
     "size": "5.15 GB"
     }
   ,
