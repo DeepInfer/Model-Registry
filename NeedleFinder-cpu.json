@@ -10,7 +10,7 @@
   "version": "0.1",
   "docker":
     {
-    "dockerhub_repository": "needlefinder/needlefinder:cpu-devel",
+    "dockerhub_repository": "needlefinder/needlefinder-cpu-devel",
     "digest": "sha256:ae752b5bc0e3e94a6da04ce91b7043bf1e9af72cbcc565e355a414e06fbf1dbd",
     "size": "1 GB"
     }
