@@ -13,21 +13,36 @@
   "docker":
     {
     "dockerhub_repository": "deepinfer/deepinfer",
-    "digest": "sha256:e16942595807b5637c16839732311c9ee5359a6f235771bfd7ad3be066fdfcb7",
-    "size": "5.15 GB"
+    "digest": "sha256:4f70192add6bb159f4f6679f9d79a9624a15d8cb20b35ed66be8cb50e660ddf0",
+    "size": "6.7 GB"
     }
   ,
   "model_name": "prostate-segmenter",
   "data_path": "/data",
   "members": [
     {
-      "name" : "ModelType",
+      "name" : "Domain",
       "type" :"enum",
-      "enum" : [ "Automatic", "BWH_WITH_ERC", "BWH_WITHOUT_ERC" ],
+      "enum" : [ "Automatic", "BWH_WITH_ERC", "BWH_WITHOUT_ERC"],
             "detaileddescriptionSet" : "Select the model that will be used for inference.\n",
       "iotype": "parameter"
     },
+    {
+      "name" : "ProcessingType",
+      "type" :"enum",
+      "enum" : [ "Fast","Accurate"],
+      "detaileddescriptionSet" : "Accurate model uses more models to compute the segmentation while the fast model only uses one model.\n",
+      "iotype": "parameter"
 
+    },
+{
+      "name" : "InferenceType",
+      "type" :"enum",
+      "enum" : [ "Single", "Ensemble"],
+      "detaileddescriptionSet" : "Accurate model uses more models to compute the segmentation while the fast model only uses one model.\n",
+      "iotype": "parameter"
+
+    },
     {
       "name": "InputVolume",
       "type": "volume",
@@ -46,13 +61,11 @@
       "default": "std::vector<unsigned int>(3, 64)",
       "itk_type": "typename FilterType::SizeType"
     },
-     {
-      "name" : "ProcessingType",
-      "type" :"enum",
-      "enum" : [ "Accurate", "Fast"],
-      "detaileddescriptionSet" : "Accurate model uses more models to compute the segmentation while the fast model only uses one model.\n",
+    {
+      "name": "OutputSmoothing",
+      "type": "bool",
+      "default" : "false",
       "iotype": "parameter"
-
     },
     {
       "name": "verbose",
