@@ -1,0 +1,50 @@
+{
+  "name": "CT Bone Segmenter",
+  "number_of_inputs": 1,
+  "task": "Segmentation.",
+  "organ": "Chest",
+  "modality": "CT",
+  "train_test_data_details": "The model is trained on CT data reconstructed with a variety of reconstruction kernels with and without contrast agent added.",
+  "briefdescription": "A bone segmentation plugin for chest CT scans developed and trained by 4Quant using a modified UNET algorithm",
+  "detaileddescription": "For more details visit http://4quant.com/Bone-Segmenter",
+  "version": "1.0",
+  "docker":
+    {
+    "dockerhub_repository": "4quant/bone-segmenter-cpu:v1",
+    "digest": "sha256:ccf3ebcca020f10873c76fcdacc73be766180184540d9f164628be1a9e29cdb0",
+    "size": "3.6 GB"
+    }
+  ,
+  "training":
+    {
+      "number of subjects": 140
+    }
+  ,
+  "test":
+    {
+      "number of subjects": 30,
+      "Accuracy": 0.772,
+      "Metric": "Dice Similarity"
+    }
+  ,
+  "pixel_types": "BasicPixelIDTypeList",
+  "vector_pixel_types_by_component": "VectorPixelIDTypeList",
+  "members": [
+    {
+      "name": "InputVolume",
+      "type": "volume",
+      "iotype": "input",
+      "voltype": "ScalarVolume",
+      "default": "std::vector<unsigned int>(3, 64)",
+      "itk_type": "typename FilterType::SizeType"
+    },
+    {
+      "name": "OutputLabel",
+      "type": "volume",
+      "iotype": "output",
+      "voltype": "LabelMap",
+      "default": "std::vector<unsigned int>(3, 64)",
+      "itk_type": "typename FilterType::SizeType"
+    }
+]
+}
