@@ -12,9 +12,9 @@
   "version": "0.1",
   "docker":
     {
-    "dockerhub_repository": "deepinfer/deepinfer",
-    "digest": "sha256:4f70192add6bb159f4f6679f9d79a9624a15d8cb20b35ed66be8cb50e660ddf0",
-    "size": "6.7 GB"
+    "dockerhub_repository": "deepinfer/prostate",
+    "digest": "sha256:74177bd528e4dfe3e4dd5d5ca18f3580715245fe6e0c79b47d7b9fc15c227fef",
+    "size": "6.77 GB"
     }
   ,
   "model_name": "prostate-segmenter",
@@ -23,7 +23,7 @@
     {
       "name" : "Domain",
       "type" :"enum",
-      "enum" : [ "Automatic", "BWH_WITH_ERC", "BWH_WITHOUT_ERC"],
+      "enum" : ["BWH_WITH_ERC", "BWH_WITHOUT_ERC", "PROMISE12"],
             "detaileddescriptionSet" : "Select the model that will be used for inference.\n",
       "iotype": "parameter"
     },
@@ -65,12 +65,6 @@
       "name": "OutputSmoothing",
       "type": "bool",
       "default" : "false",
-      "iotype": "parameter"
-    },
-    {
-      "name": "verbose",
-      "type": "bool",
-      "default" : "true",
       "iotype": "parameter"
     }
 ]
