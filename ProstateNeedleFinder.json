@@ -1,0 +1,65 @@
+{
+  "name": "Prostate Needle Finder",
+  "number_of_inputs": 1,
+  "task": "Localization.",
+  "organ": "Prostate",
+  "modality": "MRI",
+  "train_test_data_details": "The model is trained on pelvic MRI scans of a 3T machine without use of an Endorectal Coil.",
+  "briefdescription": "Biopsy needle trajectory and tip detection in intraoperative MRIS.",
+  "detaileddescription": "",
+  "website": "",
+  "citation":"",
+  "version": "0.1",
+  "docker":
+    {
+    "dockerhub_repository": "deepinfer/prostate",
+    "digest": "sha256:74177bd528e4dfe3e4dd5d5ca18f3580715245fe6e0c79b47d7b9fc15c227fef",
+    "size": "6.77 GB"
+    }
+  ,
+  "model_name": "prostate-needle-finder",
+  "data_path": "/data",
+  "members": [
+{
+      "name" : "InferenceType",
+      "type" :"enum",
+      "enum" : [ "Single", "Ensemble"],
+      "detaileddescriptionSet" : "Accurate model uses more models to compute the segmentation while the fast model only uses one model.\n",
+      "iotype": "parameter"
+
+    },
+    {
+      "name": "InputVolume",
+      "type": "volume",
+      "iotype": "input",
+      "voltype": "ScalarVolume",
+      "detaileddescriptionSet" : "Axial T2-W Prostate MRI.\n",
+      "default": "std::vector<unsigned int>(3, 64)",
+      "itk_type": "typename FilterType::SizeType"
+    },
+    {
+      "name": "InputProstateMask",
+      "type": "volume",
+      "iotype": "input",
+      "voltype": "LabelMap",
+      "detaileddescriptionSet" : "Axial T2-W Prostate MRI.\n",
+      "default": "std::vector<unsigned int>(3, 64)",
+      "itk_type": "typename FilterType::SizeType"
+    },
+    {
+      "name": "OutputLabel",
+      "type": "volume",
+      "iotype": "output",
+      "voltype": "LabelMap",
+      "detaileddescriptionSet" : "Output labelmap for the segmentation results.\n",
+      "default": "std::vector<unsigned int>(3, 64)",
+      "itk_type": "typename FilterType::SizeType"
+    },
+    {
+      "name": "OutputFiducialList",
+      "type": "point_vec",
+      "iotype": "output",
+      "detaileddescriptionSet" : "Output fiducial for storing the predicted needle tip.\n"
+    }
+]
+}
