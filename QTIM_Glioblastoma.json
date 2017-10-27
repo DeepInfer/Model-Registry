@@ -1,0 +1,81 @@
+{
+  "name": "Glioblastoma Segmenter",
+  "number_of_inputs": 4,
+  "task": "Segmentation.",
+  "organ": "Brain",
+  "modality": "MRI",
+  "train_test_data_details": "The model is trained on pre-processed brain MRIs from the BRATS2017 competition.",
+  "briefdescription": "Segmentation of glioblastoma into whole tumor (peritumoral edema and necrosis) and enhancing tumor.",
+  "detaileddescription": "",
+  "website": "",
+  "citation": "",
+  "version": "0.1",
+  "docker": {
+    "dockerhub_repository": "qtimlab/deepinfer_glioblastoma",
+    "digest": "",
+    "size": "6.77 GB"
+  },
+  "model_name": "qtim_glioblastoma",
+  "data_path": "/INPUT_DATA",
+  "members": [
+    {
+      "name": "T2",
+      "type": "volume",
+      "iotype": "input",
+      "voltype": "ScalarVolume",
+      "detaileddescriptionSet": "T2-weighted MRI volume.\n",
+      "default": "std::vector<unsigned int>(3, 64)",
+      "itk_type": "typename FilterType::SizeType"
+    },
+    {
+      "name": "T1",
+      "type": "volume",
+      "iotype": "input",
+      "voltype": "ScalarVolume",
+      "detaileddescriptionSet": "T1-weighted MRI volume.\n",
+      "default": "std::vector<unsigned int>(3, 64)",
+      "itk_type": "typename FilterType::SizeType"
+    },
+    {
+      "name": "T1POST",
+      "type": "volume",
+      "iotype": "input",
+      "voltype": "ScalarVolume",
+      "detaileddescriptionSet": "T1-weighted MRI post-contrast volume.\n",
+      "default": "std::vector<unsigned int>(3, 64)",
+      "itk_type": "typename FilterType::SizeType"
+    },
+    {
+      "name": "FLAIR",
+      "type": "volume",
+      "iotype": "input",
+      "voltype": "ScalarVolume",
+      "detaileddescriptionSet": "FLAIR MRI volume.\n",
+      "default": "std::vector<unsigned int>(3, 64)",
+      "itk_type": "typename FilterType::SizeType"
+    },
+    {
+      "name": "BiasCorrection",
+      "type": "bool",
+      "default": "true",
+      "detaileddescriptionSet": "Apply N4BiasCorrection before segmentation.\n",
+      "iotype": "parameter"
+    },
+    {
+      "name": "Preprocess",
+      "type": "bool",
+      "default": "true",
+      "detaileddescriptionSet": "Co register and resample images to isotropic space before segmentation.\n",
+      "iotype": "parameter"
+    },
+    {
+      "name": "Output",
+      "type": "volume",
+      "iotype": "output",
+      "voltype": "LabelMap",
+      "detaileddescriptionSet": "Output labelmap for the segmentation results.\n",
+      "default": "std::vector<unsigned int>(3, 64)",
+      "itk_type": "typename FilterType::SizeType"
+    }
+  ]
+}
