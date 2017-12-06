@@ -13,7 +13,7 @@
   "docker":
     {
     "dockerhub_repository": "deepinfer/prostate",
-    "digest": "sha256:74177bd528e4dfe3e4dd5d5ca18f3580715245fe6e0c79b47d7b9fc15c227fef",
+    "digest": "sha256:4b2b97f0c7ce6021a67dd3bb864e5116bc55a8c73cbb35daaa78c5e0638bf27d",
     "size": "6.77 GB"
     }
   ,
