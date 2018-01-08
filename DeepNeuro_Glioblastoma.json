@@ -1,21 +1,21 @@
 {
-  "name": "Glioblastoma Segmenter",
+  "name": "DeepNeuro_Glioblastoma",
   "number_of_inputs": 4,
-  "task": "Segmentation.",
+  "task": "Segmentation",
   "organ": "Brain",
   "modality": "MRI",
-  "train_test_data_details": "The model is trained on pre-processed brain MRIs from the BRATS2017 competition.",
+  "train_test_data_details": "The model is trained on pre-processed brain MRIs from the BRATS2017 competition, as well as private datasets from multiple instituions.",
   "briefdescription": "Segmentation of glioblastoma into whole tumor (peritumoral edema and necrosis) and enhancing tumor.",
   "detaileddescription": "",
-  "website": "",
+  "website": "https://github.com/QTIM-Lab/DeepNeuro",
   "citation": "",
   "version": "0.1",
   "docker": {
-    "dockerhub_repository": "qtimlab/deepinfer_glioblastoma",
+    "dockerhub_repository": "qtimlab/deepneuro_segment_gbm",
     "digest": "",
     "size": "6.77 GB"
   },
-  "model_name": "qtim_glioblastoma",
+  "model_name": "deepneuro_glioblastoma",
   "data_path": "/INPUT_DATA",
   "members": [
     {
@@ -55,17 +55,24 @@
       "itk_type": "typename FilterType::SizeType"
     },
     {
-      "name": "BiasCorrection",
+      "name": "debiased",
       "type": "bool",
       "default": "true",
-      "detaileddescriptionSet": "Apply N4BiasCorrection before segmentation.\n",
+      "detaileddescriptionSet": "If data is already debiased, check this box.\n",
       "iotype": "parameter"
     },
     {
-      "name": "Preprocess",
+      "name": "resampled",
       "type": "bool",
       "default": "true",
-      "detaileddescriptionSet": "Co register and resample images to isotropic space before segmentation.\n",
+      "detaileddescriptionSet": "If data is already isotropically resampled, check this box.\n",
+      "iotype": "parameter"
+    },
+    {
+      "name": "registered",
+      "type": "bool",
+      "default": "true",
+      "detaileddescriptionSet": "If data is already registered, check this box.\n",
       "iotype": "parameter"
     },
     {
