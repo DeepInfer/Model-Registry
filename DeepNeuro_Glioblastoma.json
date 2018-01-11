@@ -76,6 +76,13 @@
       "iotype": "parameter"
     },
     {
+      "name": "skullstripped",
+      "type": "bool",
+      "default": "true",
+      "detaileddescriptionSet": "If data is already skullstripped, check this box.\n",
+      "iotype": "parameter"
+    },
+    {
       "name": "Output",
       "type": "volume",
       "iotype": "output",
