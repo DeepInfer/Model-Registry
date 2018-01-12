@@ -83,7 +83,23 @@
       "iotype": "parameter"
     },
     {
-      "name": "Output",
+      "name": "GPU Number",
+      "type": "uint16_t",
+      "iotype": "parameter",
+      "param_name": "gpu_num",
+      "default": 0
+    },
+    {
+      "name": "Output_WholeTumor",
+      "type": "volume",
+      "iotype": "output",
+      "voltype": "LabelMap",
+      "detaileddescriptionSet": "Output labelmap for the segmentation results.\n",
+      "default": "std::vector<unsigned int>(3, 64)",
+      "itk_type": "typename FilterType::SizeType"
+    },
+    {
+      "name": "Output_EnhancingTumor",
       "type": "volume",
       "iotype": "output",
       "voltype": "LabelMap",
