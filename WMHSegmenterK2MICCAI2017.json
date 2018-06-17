@@ -13,7 +13,7 @@
   "docker": {
     "dockerhub_repository": "deepinfer/wmh-segmenter-k2",
     "digest": "sha256:f8a64b7fbadfb398be749dae0ecee1c486c12380d2c2fadd53dbdac0426b16d1",
-    "size": "6.77 GB"
+    "size": "6.27 GB"
   },
   "model_name": "wmh_segmenter",
   "data_path": "/data",
