@@ -1,5 +1,5 @@
 {
-  "name": "NeedleFinder-gpu-devel",
+  "name": "NeedleFinder-gpu",
   "number_of_inputs": 1,
   "task": "Segmentation.",
   "organ": "Catheters",
@@ -7,28 +7,15 @@
   "train_test_data_details": "The model is trained on 37 GYN MRI with catheters",
   "briefdescription": "Use with nvidia-docker. Segmentation of catheters from GYN MRI.",
   "detaileddescription": "",
-  "version": "0.1",
+  "version": "1.0",
   "docker":
     {
-    "dockerhub_repository": "needlefinder/needlefinder-gpu-devel",
-    "digest": "sha256:18d6fb0ef9370916d7b3a54a5b39649030c0ce7abba84af9ce7af44d9ab6d21a",
+    "dockerhub_repository": "needlefinder/needlefinder-cpu",
+    "digest": "sha256:f74c7e97493e40eb7e878a90dc41466247ebfe42881a59a2c760cbb4fe5b1249",
     "size": "2 GB"
     }
   ,
-  "training":
-    {
-      "number of subjects": 37
-    }
-  ,
-  "test":
-    {
-      "number of subjects": 37,
-      "Accuracy": 0.7,
-      "Metric": "Dice Similarity"
-    }
-  ,
-  "pixel_types": "BasicPixelIDTypeList",
-  "vector_pixel_types_by_component": "VectorPixelIDTypeList",
+  "data_path": "/app/data",
   "members": [
     {
       "name": "InputVolume",
@@ -47,17 +34,15 @@
       "itk_type": "typename FilterType::SizeType"
     },
     {
-      "name": "Min. Object Size",
+      "name": "MinObjectSize",
       "type": "uint16_t",
       "iotype": "parameter",
-      "param_name": "size",
       "default": 100
     },
     {
-      "name": "Max line fit error",
+      "name": "MaxLineFitError",
       "type": "float",
       "iotype": "parameter",
-      "param_name": "error",
       "default": 2.0
     }
 ]
