@@ -10,7 +10,7 @@
   "version": "1.0",
   "docker":
     {
-    "dockerhub_repository": "needlefinder/needlefinder-cpu",
+    "dockerhub_repository": "needlefinder/needlefinder-gpu",
     "digest": "sha256:f74c7e97493e40eb7e878a90dc41466247ebfe42881a59a2c760cbb4fe5b1249",
     "size": "2 GB"
     }
