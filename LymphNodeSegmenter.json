@@ -1,0 +1,66 @@
+{
+  "name": "Lymph Node Segmentation",
+  "number_of_inputs": 1,
+  "task": "Segmentation.",
+  "organ": "Mediastinal Lymph Nodes",
+  "modality": "CT",
+  "train_test_data_details": "Models were trained using TCIA CT Lymph Nodes dataset.",
+  "briefdescription": ".",
+  "detaileddescription": "",
+  "website": "",
+  "citation": "",
+  "version": "0.1",
+  "docker": {
+    "dockerhub_repository": "deepinfer/lnq",
+    "digest": "sha256:ed7e56549b5bcd630295874673bde2cdc271f772335c0b145b4cac42bafa62d4",
+    "size": "3.7 GB"
+  },
+  "model_name": "lnq_segmentation_med",
+  "data_path": "/data",
+  "members": [
+    {
+      "name": "InferenceType",
+      "type": "enum",
+      "enum": [
+        "Ensemble 10",
+        "Ensemble 50",
+        "Single"
+      ],
+      "detaileddescriptionSet": "Ensemble models are more accurate. Single models are less accurate.\n",
+      "iotype": "parameter"
+    },
+    {
+      "name": "InputVolume",
+      "type": "volume",
+      "iotype": "input",
+      "voltype": "ScalarVolume",
+      "detaileddescriptionSet": "Mediastinal CT scan.\n",
+      "default": "std::vector<unsigned int>(3, 64)",
+      "itk_type": "typename FilterType::SizeType"
+    },
+    {
+      "name": "InputFiducialList",
+      "type": "point_vec",
+      "iotype": "input",
+      "detaileddescriptionSet": "Input fiducial list for centers of 64 mm^3 cubes.\n"
+    },
+    {
+      "name": "OutputProbmap",
+      "type": "volume",
+      "iotype": "output",
+      "voltype": "ScalarVolume",
+      "detaileddescriptionSet": "Output probability map for the segmentation results.\n",
+      "default": "std::vector<unsigned int>(3, 64)",
+      "itk_type": "typename FilterType::SizeType"
+    },
+    {
+      "name": "OutputLabel",
+      "type": "volume",
+      "iotype": "output",
+      "voltype": "LabelMap",
+      "detaileddescriptionSet": "Output labelmap for the segmentation results.\n",
+      "default": "std::vector<unsigned int>(3, 64)",
+      "itk_type": "typename FilterType::SizeType"
+    }
+  ]
+}
